@@ -1,7 +1,7 @@
 <div class="top_groups">
 	<ul class="groups" id="nav_groups">
 
-		<li <?php echo (!$is_group) ? "class=selected":"";?>><a href="?">Все сайты <span class="count_sites"><?php echo count($sites);?></span></a>
+		<li <?php echo (!$is_group) ? "class=selected":"";?>><a href="?">Все сайты <span class="count_sites"><?php echo count($sites ?: []);?></span></a>
 		<?php if($groups):?>
 		<?php foreach($groups as $mygroup):?>
 			<li <?php echo ($is_group==$mygroup['slug']) ? "class=selected":"";?>><a href="?group=<?php echo $mygroup['slug']?>"><?php echo $mygroup['group']?> <?php if(isset($mygroup['domains'])):?><span class="count_sites"><?php echo count($mygroup['domains']);?></span><?php endif;?></a>
